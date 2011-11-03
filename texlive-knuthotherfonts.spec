@@ -1,5 +1,11 @@
+# revision 13293
+# category Package
+# catalog-ctan undef
+# catalog-date undef
+# catalog-license undef
+# catalog-version undef
 Name:		texlive-knuthotherfonts
-Version:	20111102
+Version:	20111103
 Release:	1
 Summary:	TeXLive knuthotherfonts package
 Group:		Publishing
@@ -42,6 +48,7 @@ TeXLive knuthotherfonts package.
 %{_texmfdistdir}/fonts/source/public/knuthotherfonts/halftone/imralf.mf
 %{_texmfdistdir}/fonts/source/public/knuthotherfonts/mfbook/logobase.mf
 %{_texmfdistdir}/fonts/source/public/knuthotherfonts/mfbook/metafon.mf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -52,3 +59,5 @@ TeXLive knuthotherfonts package.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
